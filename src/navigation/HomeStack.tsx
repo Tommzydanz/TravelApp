@@ -2,8 +2,8 @@ import {StyleSheet} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 import {HomeStackParamList} from './interfaces';
-import Home from '../screens/Home/Home';
 import PlaceDetails from '../screens/PlaceDetails/PlaceDetails';
+import Home from '../screens/Home/Home';
 
 const HomeStack = function HomeStack() {
   const Stack = createNativeStackNavigator<HomeStackParamList>();

@@ -19,15 +19,18 @@ const TravelStack = function TravelStack() {
         headerShown: false,
         tabBarActiveTintColor: '#0073ff',
         tabBarStyle: {
-          backgroundColor: '#efefef',
+          backgroundColor: '#f7f7f7ff',
           position: 'absolute',
-          paddingTop: 16,
-          borderTopLeftRadius: 100,
-          borderTopRightRadius: 100,
-          shadowOpacity: 0.1,
-          shadowOffset: {width: 0, height: 7},
-          elevation: 5,
-          height: 122, //add border top left radius
+          paddingTop: 20,
+          paddingHorizontal: 10,
+          borderCurve: 'continuous',
+          borderTopLeftRadius: 150, //add border top left radius
+          borderTopRightRadius: 150,
+          shadowOpacity: 0.7,
+          shadowOffset: {width: 0, height: 5},
+          elevation: 3,
+          height: 90,
+          overflow: 'hidden',
         },
         tabBarLabelStyle: {
           fontSize: 12,
@@ -38,15 +41,14 @@ const TravelStack = function TravelStack() {
         name="Home"
         component={HomeStack}
         options={{
-          header: () => null,
+          header: () => '',
           tabBarIcon: ({color}) => (
             <AntDesign name="home" size={24} color={color} />
           ),
           tabBarItemStyle: {
-            borderRadius: 8,
             justifyContent: 'center',
             alignItems: 'center',
-            height: 60,
+            height: 50,
           },
         }}
       />
@@ -60,8 +62,7 @@ const TravelStack = function TravelStack() {
           ),
           tabBarItemStyle: {
             borderRadius: 8,
-            width: '70%',
-            height: 60,
+            height: 50,
           },
         }}
       />
@@ -96,8 +97,7 @@ const TravelStack = function TravelStack() {
           ),
           tabBarItemStyle: {
             borderRadius: 8,
-            width: '20%',
-            height: 60,
+            height: 50,
           },
         }}
       />
@@ -112,7 +112,7 @@ const TravelStack = function TravelStack() {
           tabBarItemStyle: {
             borderRadius: 8,
             width: '20%',
-            height: 60,
+            height: 50,
           },
         }}
       />

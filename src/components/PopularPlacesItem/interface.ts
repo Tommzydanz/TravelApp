@@ -1,10 +1,14 @@
 import React from 'react';
-import {StyleProp, TextProps} from 'react-native';
+import {ImageSourcePropType, StyleProp, TextProps} from 'react-native';
 
-export type IPlaceItemProps = React.FC<
+export type IPopularPlaceItemProps = React.FC<
   StyleProp<any> &
     TextProps & {
-      children: React.ReactNode;
+      placeImage: ImageSourcePropType;
+      placeName: string;
+      placeLocation: string;
+      amountPerPerson: number;
+      rating: number;
       onPress: () => void;
     }
 >;

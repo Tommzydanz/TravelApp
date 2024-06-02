@@ -14,7 +14,7 @@ const Button: IButtonProps = function Button({children, onPress, style}) {
                 styles.buttonContainer,
                 {backgroundColor: '#D0D5DD'},
               ]
-            : [styles.buttonContainer, {backgroundColor: '#'}]
+            : [styles.buttonContainer, {backgroundColor: '#0073ff'}]
         }
         android_ripple={{color: '#83ff83'}}>
         <Text style={[styles.buttonText, {color: '#FFFFFF'}]}>{children}</Text>
@@ -27,7 +27,6 @@ export default Button;
 
 const styles = StyleSheet.create({
   rootContainer: {
-    marginTop: 35,
     alignItems: 'center',
     justifyContent: 'center',
   },

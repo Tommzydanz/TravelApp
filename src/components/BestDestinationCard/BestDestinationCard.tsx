@@ -7,9 +7,9 @@ import {useIsFocused} from '@react-navigation/native';
 import StackedAvatar from '../StackedAvatar/StackedAvatar';
 
 const avatars = [
-  {image: require('../../../assets/images/avatar1.png')},
-  {image: require('../../../assets/images/avatar2.png')},
-  {image: require('../../../assets/images/avatar3.png')},
+  {image: require('../../../assets/images/avatar1.jpg')},
+  {image: require('../../../assets/images/avatar2.jpg')},
+  {image: require('../../../assets/images/avatar3.jpg')},
 ];
 
 const BestDestinationCard: IBestDestinationCardProps =
@@ -49,13 +49,24 @@ const BestDestinationCard: IBestDestinationCardProps =
               {destName}
             </Text>
             <View style={styles.ratingContainer}>
-              <Ionicons name="star" color={'#ffff00'} size={18} />
+              <Ionicons
+                name="star"
+                color={'#ffff00'}
+                size={18}
+                style={{alignSelf: 'center', bottom: 3}}
+              />
               <Text style={styles.rating}>{rating}</Text>
             </View>
           </View>
           <View style={styles.locationAndVisitorsContainer}>
             <EvilIcons name="location" size={24} color="#929292" />
-            <Text style={{color: 'gray', marginRight: 10}}>{destLocation}</Text>
+            <Text
+              style={{
+                color: 'gray',
+                fontFamily: 'Poppins_400Regular',
+              }}>
+              {destLocation}
+            </Text>
             <StackedAvatar avatars={avatars} size={24} overlap={10} />
           </View>
         </Pressable>
@@ -98,7 +109,7 @@ const styles = StyleSheet.create({
   },
   destName: {
     fontSize: 18,
-    fontWeight: '500',
+    fontFamily: 'Poppins_600SemiBold',
     flex: 1,
     marginLeft: 5,
     marginRight: 20,
@@ -114,8 +125,10 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
   },
   rating: {
-    fontSize: 18,
+    fontSize: 14,
+    lineHeight: 18,
     marginLeft: 5,
+    fontFamily: 'Poppins_400Regular',
   },
   locationAndVisitorsContainer: {
     flexDirection: 'row',

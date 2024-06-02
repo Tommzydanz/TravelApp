@@ -3,15 +3,15 @@ import {StyleSheet, View} from 'react-native';
 import {AntDesign} from '@expo/vector-icons';
 import {Ionicons} from '@expo/vector-icons';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {ITravelStackParamList} from './interfaces';
-import HomeStack from './HomeStack';
+import {ITravelTabsParamList} from './interfaces';
 import Calendar from '../screens/Calendar/Calendar';
 import Search from '../screens/Search/Search';
 import Messages from '../screens/Messages/Messages';
 import Profile from '../screens/Profile/Profile';
+import Home from '../screens/Home/Home';
 
-const TravelStack = function TravelStack() {
-  const Tab = createBottomTabNavigator<ITravelStackParamList>();
+const TravelTabs = function TravelTabs() {
+  const Tab = createBottomTabNavigator<ITravelTabsParamList>();
 
   return (
     <Tab.Navigator
@@ -24,8 +24,8 @@ const TravelStack = function TravelStack() {
           paddingTop: 20,
           paddingHorizontal: 10,
           borderCurve: 'continuous',
-          borderTopLeftRadius: 150, //add border top left radius
-          borderTopRightRadius: 150,
+          borderTopLeftRadius: 80, //add border top left radius
+          borderTopRightRadius: 80,
           shadowOpacity: 0.7,
           shadowOffset: {width: 0, height: 5},
           elevation: 3,
@@ -34,14 +34,14 @@ const TravelStack = function TravelStack() {
         },
         tabBarLabelStyle: {
           fontSize: 12,
-          fontWeight: '500',
+          fontFamily: 'Poppins_400Regular',
         },
       }}>
       <Tab.Screen
         name="Home"
-        component={HomeStack}
+        component={Home}
         options={{
-          header: () => '',
+          header: () => null,
           tabBarIcon: ({color}) => (
             <AntDesign name="home" size={24} color={color} />
           ),
@@ -120,6 +120,6 @@ const TravelStack = function TravelStack() {
   );
 };
 
-export default TravelStack;
+export default TravelTabs;
 
 const styles = StyleSheet.create({});

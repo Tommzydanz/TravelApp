@@ -4,25 +4,17 @@ import React from 'react';
 import {HomeStackParamList} from './interfaces';
 import PlaceDetails from '../screens/PlaceDetails/PlaceDetails';
 import Home from '../screens/Home/Home';
+import TravelTabs from './TravelTabs';
 
 const HomeStack = function HomeStack() {
   const Stack = createNativeStackNavigator<HomeStackParamList>();
   return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="HomeStack"
-        component={Home}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name="Details"
-        component={PlaceDetails}
-        options={{
-          headerShown: false,
-        }}
-      />
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
+      <Stack.Screen name="HomeScreen" component={TravelTabs} />
+      <Stack.Screen name="Details" component={PlaceDetails} />
     </Stack.Navigator>
   );
 };
